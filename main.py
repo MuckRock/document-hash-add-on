@@ -5,7 +5,7 @@ This Add-On computes the SHA-1 hash of a document and saves it as a key/value pa
 from documentcloud.addon import SoftTimeOutAddOn
 import hashlib
 
-class Hash(AddOn):
+class Hash(SoftTimeOutAddOn):
     """An example Add-On for DocumentCloud."""
 
     def main(self):
