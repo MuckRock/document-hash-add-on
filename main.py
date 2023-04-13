@@ -3,15 +3,13 @@ This Add-On computes the SHA-1 hash of a document and saves it as a key/value pa
 """
 
 from documentcloud.addon import SoftTimeOutAddOn
-import hashlib
 
 class Hash(SoftTimeOutAddOn):
-    """An example Add-On for DocumentCloud."""
+    """Creates a hash key equal to the document's file hash"""
 
     def main(self):
         for document in self.get_documents():
-            hash = hashlib.sha1(document.pdf).hexdigest()
-            document.data.update({"hash": hash}) 
+            document.data["hash"] = document.file_hash
             document.save()
 
 if __name__ == "__main__":
