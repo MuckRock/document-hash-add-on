@@ -8,6 +8,9 @@ class Hash(SoftTimeOutAddOn):
     """Creates a hash key equal to the document's file hash"""
 
     def main(self):
+        if not self.documents:
+            self.set_message("Please select at least one document.")
+            return
         for document in self.get_documents():
             document.data["hash"] = document.file_hash
             document.save()
