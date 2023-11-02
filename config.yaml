@@ -1,5 +1,6 @@
 title: Document Hasher
 description: This Add-On allows you to calculate the SHA-1 hash of a document and add it to the document as a key value pair to establish authenticity of primary source material. 
+instructions: ''
 type: object
 documents:
   - query
